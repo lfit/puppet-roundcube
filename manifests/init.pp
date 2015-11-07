@@ -26,6 +26,10 @@ class roundcube {
     owner  => 'apache',
     group  => 'apache',
     mode   => '0755',
+    require => [
+      Package['roundcubemail'],
+      Package['httpd'],
+    ],
   }
 
   file { '/var/log/roundcubemail':
@@ -33,6 +37,10 @@ class roundcube {
     owner  => 'apache',
     group  => 'apache',
     mode   => '0755',
+    require => [
+      Package['roundcubemail'],
+      Package['httpd'],
+    ],
   }
 
   file { '/etc/roundcubemail/config.inc.php':
