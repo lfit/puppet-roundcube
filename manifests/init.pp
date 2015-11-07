@@ -48,7 +48,7 @@ class roundcube {
     owner  => 'root',
     group  => 'apache',
     mode   => '0640',
-    content => template('rday_roundcube/config.inc.php.erb'),
+    content => template('roundcube/config.inc.php.erb'),
     require => Package['roundcubemail'],
     notify => Service['httpd'],
   }
@@ -58,7 +58,7 @@ class roundcube {
     owner  => 'root',
     group  => 'apache',
     mode   => '0644',
-    content => template('rday_roundcube/roundcubemail.conf.erb'),
+    content => template('roundcube/roundcubemail.conf.erb'),
     require => [
       Package['roundcubemail'],
       Package['httpd'],
@@ -71,7 +71,7 @@ class roundcube {
     owner  => 'root',
     group  => 'root',
     mode   => '0644',
-    content => template('rday_roundcube/50-timezone.ini.erb'),
+    content => template('roundcube/50-timezone.ini.erb'),
     require => [
       Package['httpd'],
     ],
@@ -84,7 +84,7 @@ class roundcube {
     owner  => 'root',
     group  => 'root',
     mode   => '0644',
-    source => "puppet:///modules/rday_roundcube/${cube[server_cert]}",
+    source => "puppet:///modules/roundcube/${cube[server_cert]}",
   }
 
   selboolean { 'httpd_can_network_connect':
