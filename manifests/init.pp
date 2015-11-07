@@ -1,6 +1,6 @@
 # roundcube class
 
-class rday_roundcube {
+class roundcube {
   $cube = hiera('cube')
 
   service { 'httpd':
