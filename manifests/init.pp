@@ -17,7 +17,7 @@
 class roundcube(
   String $db_provider         = $roundcube::params::db_provider,
   String $db_user             = $roundcube::params::db_user,
-  String $db_password         = $roundcube::params::db_password,
+  String $db_pass             = $roundcube::params::db_pass,
   String $db_host             = $roundcube::params::db_host,
   String $db_prefix           = $roundcube::params::db_prefix,
   Integer $debug_level        = $roundcube::params::debug_level,
