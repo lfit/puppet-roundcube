@@ -1,25 +1,42 @@
-# roundcube class
+# == Class: roundcube
+#
+# This class is the entry point into installing and configuring
+# a roundcube instance.
+#
+# === Parameters
+# 
+# === Authors
+# 
+# Ryan Finnin Day <rday@linuxfoundation.org>
+#
+# === Copyright
+#
+# Copyright 2015 Ryan Finnin Day
+#
 
-class roundcube {
-  $cube = hiera('cube')
+class roundcube(
+  String $db_provider         = $roundcube::params::db_provider,
+  String $db_user             = $roundcube::params::db_user,
+  String $db_password         = $roundcube::params::db_password,
+  String $db_host             = $roundcube::params::db_host,
+  String $db_prefix           = $roundcube::params::db_prefix,
+  Integer $debug_level        = $roundcube::params::debug_level,
+  String $imap_url            = $roundcube::params::imap_url,
+  String $imap_port           = $roundcube::params::imap_port,
+  String $smtp_host           = $roundcube::params::smtp_host,
+  String $smtp_port           = $roundcube::params::smtp_port,
+  String $smtp_user           = $roundcube::params::smtp_user,
+  String $smtp_pass           = $roundcube::params::smtp_pass,
+  String $support_url         = $roundcube::params::support_url,
+  Boolean $auto_create_user   = $roundcube::params::auto_create_user,
+  String $timezone            = $roundcube::params::timezone,
+  String $des_key             = $roundcube::params::des_key,
+  Boolean $verify_peer        = $roundcube::params::verify_peer,
+  Boolean $verify_peer_name   = $roundcube::params::verify_peer_name,
+  ) inherits roundcube::params {
 
-  service { 'httpd':
-    ensure => running,
-    enable => true,
-  }
-
-  package { 'roundcubemail':
-    ensure => 'installed',
-  }
-  package { 'httpd':
-    ensure => 'installed',
-  }
-  package { 'php-mysql':
-    ensure => 'installed',
-  }
-  package { 'php-mcrypt':
-    ensure => 'installed',
-  }
+  include ::roundcube::packages
+  include ::roundcube::service
 
   file { '/var/lib/roundcubemail':
     ensure => directory,
