@@ -28,11 +28,11 @@ class roundcube(
   String $smtp_user           = $roundcube::params::smtp_user,
   String $smtp_pass           = $roundcube::params::smtp_pass,
   String $support_url         = $roundcube::params::support_url,
-  Boolean $auto_create_user   = $roundcube::params::auto_create_user,
+  String $auto_create_user    = $roundcube::params::auto_create_user,
   String $timezone            = $roundcube::params::timezone,
   String $des_key             = $roundcube::params::des_key,
-  Boolean $verify_peer        = $roundcube::params::verify_peer,
-  Boolean $verify_peer_name   = $roundcube::params::verify_peer_name,
+  String $verify_peer         = $roundcube::params::verify_peer,
+  String $verify_peer_name    = $roundcube::params::verify_peer_name,
   ) inherits roundcube::params {
 
   include ::roundcube::packages

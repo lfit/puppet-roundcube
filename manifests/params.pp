@@ -30,12 +30,12 @@ class roundcube::params {
   $smtp_user        = ''
   $smtp_pass        = ''
   $support_url      = 'http://finninday.net/wiki/index.php/Roundcube'
-  $auto_create_user = true
+  $auto_create_user = 'true'
   $server_cert      = 'newcert.pem'
   $timezone         = 'America/Los_Angeles'
   $des_key          = 'OabdapIcujHasHadfankEsof'
-  $verify_peer      = false
-  $verify_peer_name = false
+  $verify_peer      = 'false'
+  $verify_peer_name = 'false'
 
   case $::osfamily {
     'RedHat': {
