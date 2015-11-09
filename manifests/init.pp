@@ -20,7 +20,7 @@ class roundcube(
   String $db_pass             = $roundcube::params::db_pass,
   String $db_host             = $roundcube::params::db_host,
   String $db_prefix           = $roundcube::params::db_prefix,
-  Integer $debug_level        = $roundcube::params::debug_level,
+  String $debug_level         = $roundcube::params::debug_level,
   String $imap_url            = $roundcube::params::imap_url,
   String $imap_port           = $roundcube::params::imap_port,
   String $smtp_host           = $roundcube::params::smtp_host,
