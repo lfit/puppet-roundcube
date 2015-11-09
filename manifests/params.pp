@@ -22,7 +22,7 @@ class roundcube::params {
   $db_host          = 'db.finninday.net'
   $db_dbname        = 'lfmail'
   $db_prefix        = 'rc_'
-  $debug_level      = '5'
+  $debug_level      = 5
   $imap_url         = 'ssl://mail.finninday.net'
   $imap_port        = '993'
   $smtp_host        = 'mail.finninday.net'
