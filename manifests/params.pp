@@ -7,5 +7,5 @@ class roundcube::params {
     default: {
       $package_name = 'roundcubemail'
     }
-
+  }
 }
