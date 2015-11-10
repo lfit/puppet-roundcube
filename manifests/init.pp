@@ -96,13 +96,4 @@ class roundcube(
     notify => Service['httpd'],
   }
 
-  file { 'server_cert':
-    ensure => file,
-    path   => "/etc/ssl/certs/${server_cert}",
-    owner  => 'root',
-    group  => 'root',
-    mode   => '0644',
-    source => "puppet:///modules/roundcube/${server_cert}",
-  }
-
 }
