@@ -105,9 +105,4 @@ class roundcube(
     source => "puppet:///modules/roundcube/${server_cert}",
   }
 
-  selboolean { 'httpd_can_network_connect':
-      value      => on,
-      persistent => true,
-  }
-
 }
