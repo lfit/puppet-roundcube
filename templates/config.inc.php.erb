@@ -1,36 +1,36 @@
 <?php
 
-$config['db_dsnw'] = '<%= @roundcube['db_provider'] -%>://<%= @roundcube['db_user'] -%>:<%= @roundcube['db_pass'] -%>@<%= @roundcube['db_host'] -%>/<%= @roundcube['db_dbname'] -%>';
+$config['db_dsnw'] = '<%= $db_provider -%>://<%= $db_user -%>:<%= $db_pass -%>@<%= $db_host -%>/<%= $db_dbname -%>';
 
-$config['db_prefix'] = '<%= @roundcube['db_prefix'] -%>';
+$config['db_prefix'] = '<%= $db_prefix -%>';
 
-$config['debug_level'] = <%= @roundcube['debug_level'] -%>;
+$config['debug_level'] = <%= $debug_level -%>;
 
-$config['default_host'] = '<%= @roundcube['imap_url'] -%>';
+$config['default_host'] = '<%= $imap_url -%>';
 
-$config['default_port'] = <%= @roundcube['imap_port'] -%>;
+$config['default_port'] = <%= $imap_port -%>;
 
-$config['smtp_server'] = '<%= @roundcube['smtp_host'] -%>';
+$config['smtp_server'] = '<%= $smtp_host -%>';
 
-$config['smtp_port'] = <%= @roundcube['smtp_port'] -%>;
+$config['smtp_port'] = <%= $smtp_port -%>;
 
-$config['smtp_user'] = '<%= @roundcube['smtp_user'] -%>';
+$config['smtp_user'] = '<%= $smtp_user -%>';
 
-$config['smtp_pass'] = '<%= @roundcube['smtp_pass'] -%>';
+$config['smtp_pass'] = '<%= $smtp_pass -%>';
 
-$config['support_url'] = '<%= @roundcube['support_url'] -%>';
+$config['support_url'] = '<%= $support_url -%>';
 
-$config['auto_create_user'] = <%= @roundcube['auto_create_user'] -%>;
+$config['auto_create_user'] = <%= $auto_create_user -%>;
 
-$config['des_key'] = '<%= @roundcube["des_key"] -%>';
+$config['des_key'] = '<%= $des_key -%>';
 
 $config['spellcheck_engine'] = 'pspell';
 
 $config['imap_conn_options'] = array(
  'ssl'         => array(
-     'verify_peer'       => <%= @roundcube['verify_peer'] -%>,
-     'verfify_peer_name' => <%= @roundcube['verify_peer_name'] -%>,
-     'cafile'            => "/etc/ssl/certs/<%= @roundcube['server_cert'] -%>",
+     'verify_peer'       => <%= $verify_peer -%>,
+     'verfify_peer_name' => <%= $verify_peer_name -%>,
+     'cafile'            => "/etc/ssl/certs/<%= $server_cert -%>",
   ),
 );
 
