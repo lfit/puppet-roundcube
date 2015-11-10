@@ -23,6 +23,7 @@ class roundcube(
   String $debug_level         = $roundcube::params::debug_level,
   String $imap_url            = $roundcube::params::imap_url,
   String $imap_port           = $roundcube::params::imap_port,
+  String $server_cert         = $roundcube::params::server_cert,
   String $smtp_host           = $roundcube::params::smtp_host,
   String $smtp_port           = $roundcube::params::smtp_port,
   String $smtp_user           = $roundcube::params::smtp_user,
@@ -97,11 +98,11 @@ class roundcube(
 
   file { 'server_cert':
     ensure => file,
-    path   => "/etc/ssl/certs/${cube[server_cert]}",
+    path   => "/etc/ssl/certs/${server_cert}",
     owner  => 'root',
     group  => 'root',
     mode   => '0644',
-    source => "puppet:///modules/roundcube/${cube[server_cert]}",
+    source => "puppet:///modules/roundcube/${server_cert}",
   }
 
   selboolean { 'httpd_can_network_connect':
