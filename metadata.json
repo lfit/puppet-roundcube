@@ -1,0 +1,22 @@
+{
+  "name": "lfit-roundcube",
+  "version": "1.0.0",
+  "author": "rynofinn",
+  "summary": "Manage the roundcube imap service.",
+  "license": "Apache-2.0",
+  "source": "https://github.com/lfit/puppet-roundcube",
+  "project_page": "https://github.com/lfit/puppet-roundcube",
+  "issues_url": "https://github.com/lfit/puppet-roundcube/issues",
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [ "7.0" ]
+    }
+  ],
+  "dependencies": [
+  ],
+  "tags": [
+    "roundcube","webmail"
+  ]
+}
+
