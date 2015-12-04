@@ -44,10 +44,6 @@ class roundcube(
     owner  => 'apache',
     group  => 'apache',
     mode   => '0755',
-    require => [
-      Package['roundcubemail'],
-      Package['httpd'],
-    ],
   }
 
   file { '/var/log/roundcubemail':
@@ -55,10 +51,6 @@ class roundcube(
     owner  => 'apache',
     group  => 'apache',
     mode   => '0755',
-    require => [
-      Package['roundcubemail'],
-      Package['httpd'],
-    ],
   }
 
   file { '/etc/roundcubemail/config.inc.php':
@@ -67,7 +59,6 @@ class roundcube(
     group  => 'apache',
     mode   => '0640',
     content => template('roundcube/config.inc.php.erb'),
-    require => Package['roundcubemail'],
     notify => Service['httpd'],
   }
 
@@ -77,10 +68,6 @@ class roundcube(
     group  => 'apache',
     mode   => '0644',
     content => template('roundcube/roundcubemail.conf.erb'),
-    require => [
-      Package['roundcubemail'],
-      Package['httpd'],
-    ],
     notify => Service['httpd'],
   }
 
@@ -90,9 +77,6 @@ class roundcube(
     group  => 'root',
     mode   => '0644',
     content => template('roundcube/50-timezone.ini.erb'),
-    require => [
-      Package['httpd'],
-    ],
     notify => Service['httpd'],
   }
 
