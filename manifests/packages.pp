@@ -7,7 +7,7 @@ class roundcube::packages {
       'httpd',
       'php-mysql',
       'php-mcrypt',
-      'roundcube'
+      'roundcubemail'
     ],
     {
       'ensure' => 'installed'
